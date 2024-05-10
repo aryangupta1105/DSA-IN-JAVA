@@ -29,6 +29,7 @@ public class FindDuplicateElement {
             }
             
             System.out.println("Finding Duplicate using Positioning Method: " + v.get(0));
+            System.out.println("Finding Duplicate using Positioning Method: " + v.get(v.get(0)));
         }
     
     static void findDuplicateElementNegativeMarking(Vector<Integer> v){
