@@ -3,8 +3,7 @@ import java.util.*;
 public class FindMissingElement {
 
     // Negative Marking Method:
-    static void findMissingElement(Vector<Integer> v){
-        int ans = -1;
+    static void findMissingElementNegativeMarking(Vector<Integer> v){
         for(int i = 0; i<v.size(); i++){
             int index = Math.abs(v.get(i));
            if(v.get(index -1) >0)  
@@ -37,10 +36,11 @@ public class FindMissingElement {
             }
             else i++;
         }
+        System.out.print("The missing elements are: ");
         for(int  j= 0; j<v.size(); j++){
             if(v.get(j) != j+1) {
                 ans = j+1;
-                System.out.println(ans);
+                System.out.print(ans + " ");
     }
         }
         System.out.println(v);;
@@ -57,7 +57,7 @@ public class FindMissingElement {
         v.add(5);
         
         System.out.println(v);
-        // findMissingElement(v);
+        findMissingElementNegativeMarking(v);
         findMissingElementSwapNSort(v);
     }
 }
