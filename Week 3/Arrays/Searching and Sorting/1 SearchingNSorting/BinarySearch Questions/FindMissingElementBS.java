@@ -3,24 +3,58 @@ public class FindMissingElementBS {
     static int findMissingElement(int arr[]){
         int start = 0; 
         int end= arr.length-1;
-        int ans = 0;
+        int ans = -1;
         int mid = 0;
-        while(start<end){
+        while(start<=end){
             mid = start + (end - start) /2;
-            if (arr[mid] - mid != arr[end] - end)
+            if (arr[mid] - mid == 1)
             {
-                start = mid;
-            }
-            else if(arr[mid] - mid != arr[start] - start){
-                end = mid-1;
+                start = mid+1;
             }
             else{ 
-               return arr[end] +1;
+               ans = mid;
+               end = mid-1;
             }  
             
         }
-        return mid+1;
+        if(ans + 1 == 0){
+            return start+1;
+        }
+        
+        return ans+1;
     }
+    
+static int findMissingElement2(int arr[], int n) {
+    int s = 0;
+    int e = n - 1;
+    int mid = s + (e - s)/2;
+    int ans = -1;
+
+    while (s <= e)
+    {
+        int diff = arr[mid] - mid;
+
+        if(diff == 1) {
+            s = mid + 1;
+        }
+
+        else
+        {
+            ans = mid;
+            e = mid - 1;
+        }
+        mid = s + (e - s)/2;
+    }
+
+    if (ans + 1 == 0)
+    {
+        System.out.println(s);
+        return s + 1;
+    }
+    
+    return ans+1;
+}
+
     static int findMissingElementCountMethod(int arr[] , int size){
         // size+1 because length of array is one less as 1 element is missing..
         int sum = (size+1)* (size+2) /2;
@@ -35,9 +69,11 @@ public class FindMissingElementBS {
         return missingElement;
     }
     public static void main(String[] args) {
-        int arr[]  = { 1 , 2  ,4 ,5 , 6,7};
-        int missingElement = findMissingElement(arr);
-        System.out.println(missingElement);
-        findMissingElementCountMethod(arr , arr.length);
+        int arr[]  = { 1 , 2  ,3 ,4 ,5 ,6, 7};
+        // int missingElement = findMissingElement(arr);
+        // System.out.println(missingElement);
+        // findMissingElementCountMethod(arr , arr.length);
+        int missing = findMissingElement(arr);
+        System.out.println(missing);
     }
 }
