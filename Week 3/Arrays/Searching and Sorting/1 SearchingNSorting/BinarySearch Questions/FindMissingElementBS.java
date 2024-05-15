@@ -1,4 +1,4 @@
-import java.util.*;
+
 public class FindMissingElementBS {
     static int findMissingElement(int arr[]){
         int start = 0; 
@@ -24,36 +24,7 @@ public class FindMissingElementBS {
         return ans+1;
     }
     
-static int findMissingElement2(int arr[], int n) {
-    int s = 0;
-    int e = n - 1;
-    int mid = s + (e - s)/2;
-    int ans = -1;
 
-    while (s <= e)
-    {
-        int diff = arr[mid] - mid;
-
-        if(diff == 1) {
-            s = mid + 1;
-        }
-
-        else
-        {
-            ans = mid;
-            e = mid - 1;
-        }
-        mid = s + (e - s)/2;
-    }
-
-    if (ans + 1 == 0)
-    {
-        System.out.println(s);
-        return s + 1;
-    }
-    
-    return ans+1;
-}
 
     static int findMissingElementCountMethod(int arr[] , int size){
         // size+1 because length of array is one less as 1 element is missing..
