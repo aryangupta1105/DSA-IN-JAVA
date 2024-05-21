@@ -13,10 +13,10 @@ public class FindPivotUsingBS {
                 end = mid;
             }
         }
-        return start;
+        return start-1;
     }
     public static void main(String[] args) {
-        int arr[] = {7,  8 , 9, 10 , 1,2, 3, 4, 5,  6};
+        int arr[] = {1,2,3,4, 5, 6, 7, 8};
         int pivot = findPivotUsingBS(arr);
         System.out.println("The pivot is at index: " + pivot);
     }
