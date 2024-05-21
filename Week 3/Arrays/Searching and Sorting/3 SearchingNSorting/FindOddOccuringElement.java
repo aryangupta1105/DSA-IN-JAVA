@@ -28,18 +28,17 @@ public class FindOddOccuringElement {
             }  
             else{
                 if(arr[mid] == arr[mid-1])
-                s= mid+2;
-                else if(arr[mid] == arr[mid-1])
-                e = mid-2;
-                else{
-                    return mid;
+                    s= mid+1;
+                else if(arr[mid] == arr[mid+1]){
+                    ans = mid;
+                    e = mid-1;
                 }
             }
         }
-        return mid;
+        return s;
     }
     public static void main(String[] args) {
-        int arr[] = {1, 1, 2, 2, 3, 3, 4, 4, 5, 5,4};
+        int arr[] = {1, 1, 2,2, 3, 3, 4, 4, 5,5,2 , 4 ,4, 5, 5, 3, 3 };
         // findOddOccuringElement(arr);
         int ans = findOddOccuringElementBS(arr);
         System.out.println(ans);

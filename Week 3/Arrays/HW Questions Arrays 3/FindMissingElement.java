@@ -52,12 +52,14 @@ public class FindMissingElement {
         Vector<Integer> v = new Vector<>();
         v.add(1);
         v.add(3);
+        v.add(-1);
+        v.add(-3);
         v.add(3);
         v.add(3);
         v.add(5);
         
         System.out.println(v);
         findMissingElementNegativeMarking(v);
-        findMissingElementSwapNSort(v);
+        // findMissingElementSwapNSort(v);
     }
 }
