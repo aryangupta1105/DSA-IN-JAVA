@@ -37,7 +37,18 @@ public class Divide2NosUsingBS {
         int divisor = sc.nextInt();
         int quotient = divide2NosUsingBS(divident, divisor);
         System.out.println(quotient);
-        
+        System.out.println("Enter the number of floating digits: ");
+        int precision = sc.nextInt();
+        int remainder = divident%divisor;
+        double step = 0.1;
+        double finalAns = quotient;
+        for (int i = 0; i < precision; i++) {
+            while ((finalAns + step) * divisor <= divident) {
+                finalAns += step;
+            }
+            step /= 10;
+        }
+        System.out.println("The square root is " + finalAns);
        
         
     }

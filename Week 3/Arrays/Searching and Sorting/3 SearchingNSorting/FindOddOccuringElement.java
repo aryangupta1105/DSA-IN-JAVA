@@ -36,9 +36,9 @@ public class FindOddOccuringElement {
             }
         }
         return s;
-    }
+    } 
     public static void main(String[] args) {
-        int arr[] = {1, 1, 2,2, 3, 3, 4, 4, 5,5,2 , 4 ,4, 5, 5, 3, 3 };
+        int arr[] = {1, 1, 2,2, 3, 3, 4, 4,3,  5,5};
         // findOddOccuringElement(arr);
         int ans = findOddOccuringElementBS(arr);
         System.out.println(ans);
