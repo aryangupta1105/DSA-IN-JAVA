@@ -10,7 +10,7 @@ public class Class3SearchingNSorting {
         // Advanced Binary Search questions:
         // 5)Book Allocation
         // 6) Painter Partition         
-        // 7) Aggressive count         
+        // 7) Aggressive count           
         // 8) Roti Spoj         
         // 8) Eko Spoj         
     }
