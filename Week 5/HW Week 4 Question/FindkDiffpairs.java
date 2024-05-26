@@ -1,10 +1,8 @@
 import java.util.*;
-
-public class Findkdiffpairs {
-    // two pointer Approach:
-    static int findKdiffpairs(int arr[] , int k){
+public class findKDiffPairs {
+    static int FindKDiffPairs(int[] arr, int k) {
         int s = 0;
-        int e = 0; 
+        int e = s+1; 
         int count = 0; 
         Arrays.sort(arr);
         while(s < arr.length)
@@ -23,9 +21,9 @@ public class Findkdiffpairs {
         }
         return count;
     }
-    public static void main(String args[]){
-        int arr [] = {1, 5, 3, 4, 2};
-        int diff = findKdiffpairs(arr , 2);
-        System.out.println(diff);
+    public static void main(String[] args) {
+        int arr[] = {1,2,3,4,5};
+        int numPairs = FindKDiffPairs(arr , 1);
+        System.out.println(numPairs);
     }
 }
