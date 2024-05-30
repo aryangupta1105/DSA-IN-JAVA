@@ -15,7 +15,6 @@ public class FindKClosestElement {
         for(int i = 0; i<k; i++){
             ans.add(ex[i] + x);
         }
-
         
         System.out.println(ans);
         return ans;
@@ -51,11 +50,12 @@ public class FindKClosestElement {
         }
         return s;
     }
-
+    
     static void findKClosestElementBS(int arr[] , int k , int x){
         int lowerBound = findLowerBound(arr , x);
         int h = lowerBound;
         int l = h-1;
+        
     }
     public static void main(String[] args) {
         int arr[] = {12, 16, 22, 30 , 35, 39 , 42 , 45, 48 , 50 , 53, 55 , 56};
@@ -65,8 +65,8 @@ public class FindKClosestElement {
 
 
 
-        // findKClosestElementTwoPointerApproach(arr, 4, 35);
+        findKClosestElementTwoPointerApproach(arr, 4, 35);
 
-        findKClosestElementBS(arr, 4, 35);
+        // findKClosestElementBS(arr, 4, 35);
     }
 }

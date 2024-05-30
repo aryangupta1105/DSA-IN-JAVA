@@ -33,7 +33,7 @@ public class FindOddOccuringElement {
                     ans = mid;
                     e = mid-1;
                 }
-            }
+            } 
         }
         return s;
     } 
