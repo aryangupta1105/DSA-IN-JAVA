@@ -39,34 +39,55 @@ public class FindKClosestElement {
         System.out.println(ans);
     }
 
-    static int findLowerBound(int arr[] , int x){
-        int s = 0; 
-        int e = arr.length-1;
-        int mid = 0; 
-        while(s<=e){
-            mid = s + (e-s)/2;
-            if(Math.abs(arr[mid] - x) <= arr[e] - x) e = mid-1;
-            else s = mid+1;
+    static int findLowerBound(int arr[], int x) {
+        int s = 0;
+        int e = arr.length - 1;
+        int mid = 0;
+int ans = -1;
+        while (s <= e) {
+            mid = s + (e - s) / 2;
+            if (arr[mid] >= x) {
+                ans = mid;
+                e = mid - 1;
+            } else if(x>arr[mid]){
+                s = mid + 1;
+            }
+            else{e = mid-1;}
         }
-        return s;
+        return ans; // s will be the index where x would go
     }
     
     static void findKClosestElementBS(int arr[] , int k , int x){
         int lowerBound = findLowerBound(arr , x);
         int h = lowerBound;
         int l = h-1;
-        
+        Vector<Integer> ans = new Vector<>();
+        while(k>=0){ 
+            if(x - arr[l] >= arr[h] - x){
+                h++;
+            }
+            else{
+                l--;
+            }
+            k--;
+        }
+        for(int i = l+1; i<h-1; i++){
+            ans.add(arr[i]);
+        }
+        System.out.println(ans);
+        System.out.println(lowerBound);
     }
     public static void main(String[] args) {
-        int arr[] = {12, 16, 22, 30 , 35, 39 , 42 , 45, 48 , 50 , 53, 55 , 56};
+        int arr[] = {0,0,0,1,3,5,6,7,8,8};
+        // int arr[] = {1,2,3,4,5};
         // there's some bug..
         // Vector<Integer> closest = findKClosestElement(arr, 4, 35);
         // System.out.println(closest);
 
 
 
-        findKClosestElementTwoPointerApproach(arr, 4, 35);
+        findKClosestElementTwoPointerApproach(arr, 2, 2);
 
-        // findKClosestElementBS(arr, 4, 35);
+        findKClosestElementBS(arr, 2, 2);
     }
 }
