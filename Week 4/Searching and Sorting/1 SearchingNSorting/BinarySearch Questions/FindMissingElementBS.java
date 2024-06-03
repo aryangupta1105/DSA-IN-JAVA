@@ -28,7 +28,7 @@ public class FindMissingElementBS {
 
     static int findMissingElementCountMethod(int arr[] , int size){
         // size+1 because length of array is one less as 1 element is missing..
-        int sum = (size+1)* (size+2) /2;
+        int sum = (size+1)* (size) /2;
         int newSum = 0;
         for(int i = 0; i<size; i++){
             newSum += arr[i];
@@ -40,10 +40,10 @@ public class FindMissingElementBS {
         return missingElement;
     }
     public static void main(String[] args) {
-        int arr[]  = { 1 , 2  ,3 ,4 ,5 ,6, 7};
+        int arr[]  = { 1,0,3};
         // int missingElement = findMissingElement(arr);
         // System.out.println(missingElement);
-        // findMissingElementCountMethod(arr , arr.length);
+        findMissingElementCountMethod(arr , arr.length);
         int missing = findMissingElement(arr);
         System.out.println(missing);
     }
